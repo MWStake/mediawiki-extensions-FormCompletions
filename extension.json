@@ -1,0 +1,37 @@
+{
+	"name": "FormCompletions",
+	"version": "1.0.0-alpha",
+	"author": [
+		"[http://hexmode.com/ Mark A. Hershberger]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:FormCompletions",
+	"descriptionmsg": "formcompletions-desc",
+	"license-name": "GPL-3.0+",
+	"type": "other",
+	"MessagesDirs": {
+		"FormCompletions": [
+			"i18n"
+		]
+	},
+	"APIModules": {
+		"fcautocomplete": "MediaWiki\\Extensions\\FormCompletions\\API"
+	},
+	"AutoloadClasses": {
+		"MediaWiki\\Extensions\\FormCompletions\\Config": "src/Config.php",
+		"MediaWiki\\Extensions\\FormCompletions\\Config": "src/Config.php",
+		"MediaWiki\\Extensions\\FormCompletions\\CompletionHandler": "src/CompletionHandler.php",
+		"MediaWiki\\Extensions\\FormCompletions\\Completer": "src/Completer.php",
+		"MediaWiki\\Extensions\\FormCompletions\\Completer\\WikiPage": "src/Completer/WikiPage.php",
+		"MediaWiki\\Extensions\\FormCompletions\\Completer\\LDAPGroup": "src/Completer/LDAPGroup.php",
+		"MediaWiki\\Extensions\\FormCompletions\\API": "src/API.php"
+	},
+	"config": {
+		"_prefix": "FormCompletions",
+		"MapPage": "MediaWiki:Completion-map.json",
+		"CacheTime": 300,
+		"Debug": false,
+		"AvailableCompletions": {
+			"wikipage": "MediaWiki\\Extensions\\FormCompletions\\Completer\\WikiPage"
+		}
+	}
+}

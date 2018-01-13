@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mark A. Hershberger"
+		]
+	},
+	"formcompletions-desc": "Provide an extensible AutoCompletion API to MediaWiki.",
+	"formcompletions-api-substr-param": "The substring to use to match against.",
+	"formcompletions-api-finder-param": "The finder you want to use against.",
+	"apierror-formcompletions-could-not-parse": "Error parsing $1 to get possible-completions.",
+	"apierror-formcompletions-invalid-finder": "The completion system you specified ($1) does not exist on this wiki.",
+	"apihelp-fcautocomplete-summary": "Extensible autocompletions"
+}
