@@ -25,7 +25,7 @@ use MediaWiki\Extensions\FormCompletions\Completer;
 class WikiPage extends Completer {
 	private $page;
 
-	public static function prefix() {
+	public static function getPrefix() {
 		return "page";
 	}
 

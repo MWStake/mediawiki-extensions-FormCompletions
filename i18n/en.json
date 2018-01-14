@@ -9,5 +9,10 @@
 	"formcompletions-api-finder-param": "The finder you want to use against.",
 	"apierror-formcompletions-could-not-parse": "Error parsing $1 to get possible-completions.",
 	"apierror-formcompletions-invalid-finder": "The completion system you specified ($1) does not exist on this wiki.",
+	"apierror-formcompletions-closure-not-valid": "A closure cannot be used as a completer",
+	"apierror-formcompletions-method-not-exist": "Class ($1) does not have the '$2' method",
+	"apierror-formcompletions-no-handler-for": "No handler registered for $1 lookups",
+	"apierror-formcompletions-class-not-exist": "Class not found: $1",
+	"apierror-formcompletions-method-not-exist": "Cannot call handler: $1",
 	"apihelp-fcautocomplete-summary": "Extensible autocompletions"
 }

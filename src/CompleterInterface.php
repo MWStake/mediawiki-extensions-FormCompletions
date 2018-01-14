@@ -20,20 +20,8 @@
  */
 namespace MediaWiki\Extensions\FormCompletions;
 
-abstract class Completer implements CompleterInterface {
-	abstract public function setArg( $arg );
-	abstract public function handleCompletion( $substr );
-
-	protected $memc;
-	protected $config;
-	protected $api;
-
-	public static function getInstance( API $api ) {
-		$class = get_called_class();
-		$self = new $class();
-		$self->memc = wfGetCache( CACHE_ANYTHING );
-		$self->config = Config::newInstance();
-		$self->api = $api;
-		return $self;
-	}
+interface CompleterInterface {
+	public static function getPrefix();
+	public function handleCompletion( $substr );
+	public static function getInstance( API $api );
 }

@@ -18,19 +18,50 @@
  *
  * @author Mark A. Hershberger <mah@nichework.com>
  */
-namespace MediaWiki\Extensions\FormCompletions;
+namespace MediaWiki\Extensions\FormCompletions\Completer;
 
-abstract class Completer implements CompleterInterface {
-	abstract public function setArg( $arg );
-	abstract public function handleCompletion( $substr );
+use MediaWiki\Extensions\FormCompletions\CompleterInterface;
+use MediaWiki\Extensions\FormCompletions\API;
+use MediaWiki\Extensions\FormCompletions\Config;
+
+class Closure implements CompleterInterface {
+	protected $completer;
+	protected $arg;
+	protected $prefix;
+	protected static $instances = [];
+
+	/**
+	 * Prefix and arg are the same for closures.
+	 */
+	public function setPrefix( $key ) {
+		$this->prefix = $key;
+	}
+
+	public function setArg( $key ) {
+		$this->arg = $key;
+	}
+
+	public static function getPrefix() {
+		throw new \MWException( "not needed" );
+	}
+
+	public function setCompleter( $completer ) {
+		if ( !isset( self::$instances[ $this->prefix ] ) ) {
+			self::$instances[ $this->prefix ] = $completer;
+			self::$instances[ 'Hydro' ] = $completer;
+		}
+	}
+
+	public function handleCompletion( $substr ) {
+		return call_user_func( self::$instances[ $this->arg ], $substr );
+	}
 
 	protected $memc;
 	protected $config;
 	protected $api;
 
 	public static function getInstance( API $api ) {
-		$class = get_called_class();
-		$self = new $class();
+		$self = new self();
 		$self->memc = wfGetCache( CACHE_ANYTHING );
 		$self->config = Config::newInstance();
 		$self->api = $api;

@@ -62,7 +62,7 @@ class API extends ApiBase {
 		$this->memc = wfGetCache( CACHE_ANYTHING );
 		$this->retValue = null;
 		$this->handler = CompletionHandler::getInstance();
-		$this->handler->registerCompletions();
+		$this->handler->registerCompletions( $this );
 
 		return $this->verifyParameters();
 	}
@@ -113,7 +113,7 @@ class API extends ApiBase {
 			$completer = WPCompleter::getInstance( $this );
 			$arg = $handler;
 		} else {
-			$completer = CompletionHandler::getCompleter( $this, $handler->type );
+			$completer = $this->handler->getCompleter( $this, $handler->type );
 			$arg = $handler->arg;
 		}
 		$completer->setArg( $arg );

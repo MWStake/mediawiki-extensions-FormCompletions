@@ -20,9 +20,10 @@
 		"MediaWiki\\Extensions\\FormCompletions\\Config": "src/Config.php",
 		"MediaWiki\\Extensions\\FormCompletions\\Config": "src/Config.php",
 		"MediaWiki\\Extensions\\FormCompletions\\CompletionHandler": "src/CompletionHandler.php",
+		"MediaWiki\\Extensions\\FormCompletions\\CompleterInterface": "src/CompleterInterface.php",
 		"MediaWiki\\Extensions\\FormCompletions\\Completer": "src/Completer.php",
 		"MediaWiki\\Extensions\\FormCompletions\\Completer\\WikiPage": "src/Completer/WikiPage.php",
-		"MediaWiki\\Extensions\\FormCompletions\\Completer\\LDAPGroup": "src/Completer/LDAPGroup.php",
+		"MediaWiki\\Extensions\\FormCompletions\\Completer\\Closure": "src/Completer/Closure.php",
 		"MediaWiki\\Extensions\\FormCompletions\\API": "src/API.php"
 	},
 	"config": {
