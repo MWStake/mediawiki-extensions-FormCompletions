@@ -34,5 +34,6 @@
 		"AvailableCompletions": {
 			"wikipage": "MediaWiki\\Extensions\\FormCompletions\\Completer\\WikiPage"
 		}
-	}
+	},
+	"manifest_version": 1
 }
